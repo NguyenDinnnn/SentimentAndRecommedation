@@ -1,0 +1,18 @@
+services:
+
+  sandr:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: sandr:latest
+
+    container_name: sandr
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    ports:
+      - "8091:8000"
